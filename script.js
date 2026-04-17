@@ -48,7 +48,7 @@ document.querySelectorAll(".card").forEach((card) => {
 leftSwipe.addEventListener("click", () => {
   let slide = document.getElementsByClassName("slide active")[0];
   let prevSlide = slide.previousElementSibling;
-  if(prevSlide!=null && prevSlide!=undefined && prevSlide.nextElementSibling.classList.contains("slide")) {
+  if(prevSlide!=null && prevSlide!=undefined && prevSlide.classList.contains("slide")) {
     slide.classList.remove("active");
     prevSlide.classList.add("active");
   }

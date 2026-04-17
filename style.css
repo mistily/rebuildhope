@@ -244,9 +244,9 @@ video {
 }
 
 .tri {
-  --r: 4px; /* the radius */
+  --r: 8px; /* the radius */
  
-  width: 30px;
+  width: 60px;
   aspect-ratio: 1/cos(30deg);
   --_g:calc(tan(60deg)*var(--r)) bottom var(--r),#000 98%,#0000 101%;
   -webkit-mask:
@@ -262,9 +262,11 @@ video {
 }
 .right-arrow {
   position: absolute;
-    right: -15px;
-    top: 40%;
-    transform:rotate(90deg);
+      position: absolute;
+    right: -30px;
+    top: 35%;
+    transform: rotate(90deg);
+    object-fit: cover;
 }
 .card {
   perspective: 90%;
