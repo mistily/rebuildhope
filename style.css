@@ -59,6 +59,9 @@ body {
   mask-image: url('./images/tear-mask.png');
   -webkit-mask-size: cover;
   mask-size: cover;
+  mask-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-image: url('./images/tear-mask.png');
 }
 
 .tear-content img {
