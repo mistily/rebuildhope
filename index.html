@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Help Rebuild Székely Istváns Home</title>
   <link rel="stylesheet" href="style.css"/>
-  <meta property="og:title" content="Help Rebuild a Life">
+  <meta name="description" content="Family's home destroyed by fire. Help us rebuild their lives. Donate now to support urgent recovery & restoration. Every dollar brings hope. #RebuildWithUs"/>
+  <meta name="keywords" content="fire-damaged, house, fundraiser, rebuild, after fire, commuity, support, needed, viral, charity, fundraiser"/>
+  <meta property="og:title" content="Help Rebuild the work of Life">
   <meta property="og:description" content="A home was lost in a fire. Help rebuild it.">
   <meta property="og:image" content="preview.jpg">
   <link rel="icon" class="site-favicon" type="image/png" href="./images/icons8-pray-48.png">
@@ -19,7 +21,6 @@
   </div>
   <div class="top-media">
   	<div class="blob-container">
-      <!--video src="videos/618fd52d-7354-4256-9568-1a46ff43df8a.mp4" alt="Burnt house" loop="true" autoplay="true" controls="true"></video-->
   </div>
       <svg width="0" height="0">
   <defs>
@@ -38,7 +39,7 @@
     </div>
   </div>
 
-  <div class="bottom-prayer"><image src="./images/icons8-pray-48.png" alt="donate-and-pray" title="Donate"/>
+  <div class="bottom-prayer"><a href="https://revolut.me/istvangodt?amount=5"><image src="./images/icons8-pray-48.png" alt="donate-and-pray" title="Donate"/></a>
   <div class="text bottom">... but you can help rebuild what was lost.</div>
 </div>
   <!-- Story card -->
@@ -50,25 +51,30 @@
       With your help, rebuilding can begin.
     </p>
     <img src="./images/home-ruins.jpeg" alt="open the disaster gallery" id="open-disaster" class="tri right-arrow">
-    <a class="donate" href="#" target="_blank">Donate</a>
+    <a class="donate donate_btn" href="https://revolut.me/istvangodt" target="_blank">Donate</a>
 
     <div class="share">
-      <a href="#" id="share-wa">WhatsApp</a>
-      <a href="#" id="share-tw">X</a>
-      <a href="#" id="share-fb">Facebook</a>
+      <a href="#" id="share-wa" tooltip="Share via Whatsapp">
+      	<img src="./images/whatsapp_icon.png" title="Share hope via Whatsapp" alt="Share on Whatsapp"/></a>
+      </a>
+      <a href="#" id="share-tw">
+      	<img src="./images/x_icon.png" title="Share hope via X platform" alt="Share on X"/></a>
+      </a>
+      <a href="#" id="share-fb">
+      	<img src="./images/Facebook_icon.png" title="Share hope via Facebook platform" alt="Share on Facebook"/></a>
+      </a>
     </div>
   </div>
   <div class="carousel-container">
-  <div class="carousel">
+  <div class="carousel" id="detail-carousel">
   	<div><button aria-label="close">×</button></div>
     <div class="slide active">
     	<div class="card">
     		<div class="card-inner">
     			<div class="card-media"><video src="videos/618fd52d-7354-4256-9568-1a46ff43df8a.mp4" alt="Burnt house" loop="true" mute autoplay="true" controls="true"></video></div>
     			<div class="card-content">
-    				Just this year February, our home, that we have had built together with my family was burnt down
-    				to ashes just within a couple of hours. It still is a shock for us to process, that the effort
-    				has had gone to waste in that record of a
+    				Just this year February, our home, that the Székely family have had built together was burnt to ashes just within a couple of hours with all its interior values. It still is a shock for the family to process, that the effort has had gone to waste in that record of a time, with only leaving some reminescent ruins after.
+    				The family house was located in Kisögény. Everything, that the house has had contained has had perished and all their previous life and works effort remained only a memory.
     			</div>
     			<div class="smoke-layer"></div>
     		</div>
@@ -77,27 +83,34 @@
     <div class="slide"><div class="card">
     		<div class="card-inner">
     			<div class="card-media">
-    				<img src="./images/home-ruins.jpeg" alt="open the disaster gallery" id="" class="card-media-image">
+    				<img src="./images/disaster-home.jpeg" alt="open the disaster gallery" id="" class="card-media-image">
     			</div>
     			<div class="card-content">
-    				Just this year February, our home, that we have had built together with my family was burnt down
-    				to ashes just within a couple of hours. It still is a shock for us to process, that the effort
-    				has had gone to waste in that record of a
+    				The most important thing is, that nobody has had gotten any injuries during the disaster, so they are medically safe, though, there is still a life to rebuild for them. <br\>
+    				As a whole families everyday goods vanished within just that small amount of time,
+    				we ask you to take a moment and consider donating, even with the amount of a coffees price, for them, in order to be able to assure the most important things for survival, like clothing, food, temporary shelter.
     			</div>
     			<div class="smoke-layer"></div>
     		</div>
     	</div></div>
     <div class="slide"><div class="card">
     		<div class="card-inner">
-    			<div class="card-media"><img src="./images/home-ruins.jpeg" alt="open the disaster gallery" id="" class="card-media-image"></div>
+    			<div class="card-media"><img src="./images/burnt-home.jpeg" alt="open the disaster gallery" id="" class="card-media-image"></div>
     			<div class="card-content">
+    				We ask you to take a moment and consider donating, even with the amount of a coffees price, for them, in order to be able to assure the most important for survival, like clothing, food, temporary shelter.
+    				Could you donate today?
+    				If you do, please, consider transfering money to BT.: RO90BTRLRONCRT0409416801 or REVOLUT: RO80REVO0000156042557385 or @istvangodt
+    				If you can not help, please consider sharing this webpage in order to let more people know.
+    				Sometimes it is the smallest gesture that carries the gratest light - yours might be the one that reaches further then you will ever see.
     			</div>
     			<div class="smoke-layer"></div>
     		</div>
     	</div></div>
   </div>
-  <button class="prev carousel-prev">‹</button>
-  <button class="next carousel-next">›</button>
+  <div class="carousel" id="bg1-carousel"></div>
+  <div class="carousel" id="bg2-carousel"></div>
+  <button class="prev carousel-prev nav-arrow nav-arrow-left left" id="car-left"></button>
+  <button class="next carousel-next nav-arrow nav-arrow-right right" id="car-right"></button>
 </div>   
 </div>
 
