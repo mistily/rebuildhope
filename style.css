@@ -61,6 +61,7 @@ body {
     right: 2vw;
     bottom: 2px;
     gap: 15px;
+    width: 70%;
 }
 .blob-container {
   width: 430px;
@@ -427,7 +428,8 @@ button.prev, button.next {
 }
 .card-media { z-index: 1; }
 .card-media-image {object-fit: cover; width: 100%;}
-.card-content { z-index: 2; position: relative;padding:30px 20px 20px 20px; }
+.card-content { z-index: 2; position: relative;padding:30px 20px 20px 20px; max-height: 200px; overflow-y: scroll;scrollbar-color: black transparent;
+  scrollbar-width: thin;}
 .smoke-layer { z-index: 0; }
 /* STORY CARD */
 .story-card {
@@ -473,4 +475,33 @@ button.prev, button.next {
 
 .story-card.active .share {
   opacity: 1;
+}
+@media(max-width: 768px) {
+  .story-card {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    margin-left: 0%;
+    transform: translate(-50%, 40px);
+    background: lightgray;
+    padding: 20px 40px;
+    border-radius: 12px;
+    width: 290px;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+  .card-content {
+    padding: 15px 10px 10px 10px;
+  }
+}  
+@media(max-width: 556px) {
+  .carousel {
+    width: 75vw;
+    left:10vw;
+    top:25vh;
+  }
+  .carousel-prev {
+    left: 0vw;
+  }
 }

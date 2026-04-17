@@ -16,8 +16,12 @@ carouselx.addEventListener("click", () => {
 galleryOpenBtn.addEventListener("click", () => {
   document.getElementsByClassName('carousel-container')[0].style.display = 'flex';
   let dimsRef = document.getElementById("detail-carousel").getBoundingClientRect().height;
+  let caretLeftPos = document.getElementById("detail-carousel").getBoundingClientRect().left - 120;
+  let caretRightPos = document.getElementById("detail-carousel").getBoundingClientRect().right + 20;
   document.getElementById("bg1-carousel").style.height = dimsRef + "px";
   document.getElementById("bg2-carousel").style.height = dimsRef + "px";
+  document.getElementById("car-left").style.left = caretLeftPos + "px";
+  document.getElementById("car-right").style.left = caretRightPos + "px";
 });
 galleryClose.addEventListener("click", () => {
   document.getElementsByClassName('carousel-container')[0].style.display = 'none';
