@@ -77,14 +77,20 @@ video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /*-webkit-mask: url(#blob-mask);
+  border-radius: 20px;
+}   
+.carousel:hover {
+  --r: 25px;
+
+}
+.video-decor {
+   /*-webkit-mask: url(#blob-mask);
   mask: url(#blob-mask);
   mask: radial-gradient(100px at 20% 28vh, black 99%, transparent) 50% -30px/30px 100%;*/
   mask-image: radial-gradient(110px at 10% 20vh, orange 69%, transparent), radial-gradient(110px at 90% 20vh, orange 28%, transparent), radial-gradient(110px at 50% 20vh, orange 9%, transparent);
     -webkit-mask-position: 22% 30px;
     -webkit-mask-size: 311px 100%;
-    opacity:0;
-}   
+}
 .top-blob {
   width: 200px;
   height: 200px;
@@ -144,17 +150,143 @@ video {
   object-fit: cover;
   filter: brightness(0.8);
 }
+@property --r {
+  syntax: "<length>";
+  initial-value: 0px;
+  inherits: true;
+}
 
+.tri {
+  --r: 4px; /* the radius */
+ 
+  width: 30px;
+  aspect-ratio: 1/cos(30deg);
+  --_g:calc(tan(60deg)*var(--r)) bottom var(--r),#000 98%,#0000 101%;
+  -webkit-mask:
+    conic-gradient(from -30deg at 50% calc(200% - 3*var(--r)/2),#000 60deg,#0000 0)
+     0 100%/100% calc(100% - 3*var(--r)/2) no-repeat,
+    radial-gradient(var(--r) at 50% calc(2*var(--r)),#000 98%,#0000 101%),
+    radial-gradient(var(--r) at left  var(--_g)),
+    radial-gradient(var(--r) at right var(--_g));
+  clip-path: polygon(50% 0,100% 100%,0 100%);
+  transition: --r .6s;
+  cursor: pointer;
+  
+}
+.right-arrow {
+  position: absolute;
+    right: -15px;
+    top: 40%;
+    transform:rotate(90deg);
+}
+.card {
+  perspective: 90%;
+}
+.card-inner {
+  transform-style: preserve-3d;
+  transition: transform0.15s ease-out;
+  will-change: transform;
+}
+.smoke-layer {
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.08), transparent 60%);
+  filter: blur(18px);
+  opacity: 0.4;
+  animation: smokeFloat 8s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+
+@keyframes smokeFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translate3d(10px, -12px, 0) scale(1.05);
+    opacity: 0.45;
+  }
+  100% {
+    transform: translate3d(-6px, 6px, 0) scale(1);
+    opacity: 0.25;
+  }
+}
+.carousel {
+    position: absolute;
+    top: 10%;
+    width: 50vw;
+    background-color: #652a2a;
+    color: #e8e3e8;
+    left: 25vw;
+    overflow: hidden;
+    display: flex;
+    max-width: 600px;
+    border-radius:25px;
+    transition: --r .6s;
+  cursor: pointer;
+  color:;
+
+}
+.carousel button[aria-label="close"] {
+    font-size: 33px;
+    border: none;
+    background: none;
+    position: absolute;
+    right: 15px;
+    color: white;
+}
+.carousel-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  position: fixed;
+  z-index: 9999;
+  width: 100px;
+  height: 100px;
+  left: 10px;
+  top: 50px;
+}
+.slide {
+  min-width: 100%;
+  text-align: center;
+  padding: 30px 20px 30px 20px;
+}
+.carousel-prev {
+  position: absolute;
+      left: 25vw;
+    top: 40%;
+}
+.carousel-next {
+  position: absolute;
+    top: 40%;
+   left:73vw;
+}
+.card-inner {
+  position: relative;
+}
+button.prev, button.next {
+      border: none;
+    background-color: transparent;
+    font-size: 43px;
+    cursor: pointer;
+}
+.card-media { z-index: 1; }
+.card-media-image {object-fit: cover; width: 100%;}
+.card-content { z-index: 2; position: relative; }
+.smoke-layer { z-index: 0; }
 /* STORY CARD */
 .story-card {
   position: absolute;
   bottom: 10%;
   background: lightgray;
-  padding: 20px;
+  padding:20px 40px 20px 40px;
   border-radius: 12px;
-  width: 280px;
+  width: 290px;
   text-align: center;
-  margin-left:30vw;
+  margin-left:37%;
 
 
   opacity: 0;
