@@ -55,8 +55,8 @@ body {
   overflow: hidden;
 
   /* Torn mask */
-  -webkit-mask-image: url('images/tear-mask.png');
-  mask-image: url('images/tear-mask.png');
+  -webkit-mask-image: url('./images/tear-mask.png');
+  mask-image: url('./images/tear-mask.png');
   -webkit-mask-size: cover;
   mask-size: cover;
 }
