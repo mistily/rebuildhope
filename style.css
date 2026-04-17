@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f4f4;
+  overflow-x: hidden;
+}
+
+.hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TEXT */
+.text {
+  position: absolute;
+  color: #111;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.top {
+  top: 40px;
+  left: 40px;
+}
+
+.bottom {
+  bottom: 40px;
+  right: 40px;
+  text-align: right;
+}
+
+/* TEAR */
+.tear-container {
+  width: 300px;
+  height: 400px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.tear-container:hover {
+  transform: scale(1.05);
+}
+
+.tear-content {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  /* Torn mask */
+  -webkit-mask-image: url('images/tear-mask.png');
+  mask-image: url('images/tear-mask.png');
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
+
+.tear-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+}
+
+/* STORY CARD */
+.story-card {
+  position: absolute;
+  bottom: 10%;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 280px;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.4s ease;
+}
+
+.story-card.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* BUTTON */
+.donate {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+/* SHARE */
+.share {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.story-card.active .share {
+  opacity: 1;
+}
