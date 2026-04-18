@@ -10,6 +10,7 @@ const langSwitch = document.getElementById("langSwitch");
 let langs = document.getElementsByClassName("lang-link");
 const supported = ["en", "hu", "ro"];
 
+
 function getLangFromURL() {
   const params = new URLSearchParams(window.location.search);
   return params.get("lang");
@@ -20,7 +21,6 @@ async function getTranslations(){
 }
 async function changeLanguage(lang){
   localStorage.setItem("lang",lang);
-  const translations = await getTranslations();
   const url = new URL(window.location);
   url.searchParams.set("lang", lang);
   window.history.replaceState({},"",url);
@@ -35,9 +35,60 @@ async function changeLanguage(lang){
       el.textContent = translations[lang][key];
     }
   });
-
+  changeBtnsLang(lang);
 }
-document.addEventListener("DOMContentLoaded", () =>{
+function changeBtnsLang(lang) {
+  changeMoreInfoBtnLang(lang);
+  changeXShareBtnLang(lang);
+  changeWhatsAppShareBtnLang(lang);
+  changeFbShareBtnLang(lang);
+}
+function changeMoreInfoBtnLang(lang) {
+  let moreInfBtn = document.getElementById("open-disaster");
+  moreInfBtn.setAttribute("alt", translations[lang]["moreInfoBtnAlt"]);
+  moreInfBtn.setAttribute("title", translations[lang]["moreInfoBtnTitle"]);
+  moreInfBtn.setAttribute("tooltip", translations[lang]["moreInfoBtnTitle"]);
+}
+function changeXShareBtnLang(lang) {
+  const text = encodeURIComponent(translations[lang]["xShareTextLine"]);
+  const url = encodeURIComponent("https://mistily.github.io/rebuildhope?lang="+lang);
+  const hashTags encodeURIComponent(translations[lang]["xShareTextHashes"]);
+  const shareLink = `https://x.com/intent/tweet?text=${text}&url=${url}&hashtags=${hashTags}`;
+  const xShareBtn = document.getElementById("share-tw");
+  xShareBtn.setAttribute("href", shareLink);
+  xShareBtn.setAttribute("title", translations[lang]["xBtnTitle"]);
+  xShareBtn.setAttribute("tooltip", translations[lang]["xBtnTitle"]);
+  xShareBtn.querySelector("img").setAttribute("title", translations[lang]["xBtnTitle"]);
+  xShareBtn.querySelector("img").setAttribute("alt",translations[lang]["xBtnTitle"]);
+}
+function changeWhatsAppShareBtnLang(lang) {
+  const text =  encodeURIComponent(translations[lang]["whatsAppShareTextLine"]);
+  const shareLink = encodeURIComponent("https://wa.me/?text="+text);
+  const shareWhatsAppBtn = document.getElementById("share-wa");
+  shareWhatsAppBtn.setAttribute("title", translations[lang]["whatsappBtnTitle"]);
+  shareWhatsAppBtn.setAttribute("tooltip", translations[lang]["whatsappBtnTitle"]);
+  shareWhatsAppBtn.querySelector("img").setAttribute("title", translations[lang]["whatsappBtnTitle"]);
+  shareWhatsAppBtn.querySelector("img").setAttribute("alt", translations[lang]["whatsappBtnTitle"]);
+  shareWhatsAppBtn.setAttribute("a", shareLink);
+}
+function changeFbShareBtnLang(lang) {
+  const url = encodeURIComponent("https://mistily.github.io/rebuildhope?lang="+lang);
+  const shareLink = encodeURIComponent("https://www.facebook.com/sharer/sharer.php?u="+url);
+  const shareFbAppBtn = document.getElementById("share-fb");
+  shareFbAppBtn.setAttribute("title", translations[lang]["facebookBtnTitle"]);
+  shareFbAppBtn.setAttribute("tooltip", translations[lang]["facebookBtnTitle"]);
+  shareFbAppBtn.querySelector("img").setAttribute("title", translations[lang]["facebookBtnTitle"]);
+  shareFbAppBtn.querySelector("img").setAttribute("alt", translations[lang]["facebookBtnTitle"]);
+  shareFbAppBtn.setAttribute("a", shareLink);
+}
+function donateBtnLang(lang) {
+  let donateBtn = document.getElementById("donateBtn");
+  donateBtn.textContent = translations[lang]["donationCardBtn"];
+  donateBtn.setAttribute("tooltip", translations[lang]["donationTooltip"]);
+  donateBtn.setAttribute("title", translations[lang]["donationTooltip"]);
+}
+document.addEventListener("DOMContentLoaded", async () =>{
+  const translations = await getTranslations();
   const urlLang = getLangFromURL();
   const savedLang = localStorage.getItem("lang");
   const lang = supported.includes(urlLang)? urlLang || savedLang || "en": "en";
