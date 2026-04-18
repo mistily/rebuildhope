@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Help Rebuild Székely Istváns Home</title>
+  <title data-translate="title">Help Rebuild Székely Istváns Home</title>
   <link rel="stylesheet" href="style.css"/>
-  <meta name="description" content="Family's home destroyed by fire. Help us rebuild their lives. Donate now to support urgent recovery & restoration. Every dollar brings hope. #RebuildWithUs"/>
-  <meta name="keywords" content="fire-damaged, house, fundraiser, rebuild, after fire, commuity, support, needed, viral, charity, fundraiser"/>
-  <meta property="og:title" content="Help Rebuild the work of Life">
-  <meta property="og:description" content="A home was lost in a fire. Help rebuild it.">
-  <meta property="og:image" content="preview.jpg">
+  <meta data-translate="description" name="description" content="Family's home destroyed by fire. Help us rebuild their lives. Donate now to support urgent recovery & restoration. Every dollar brings hope. #RebuildWithUs"/>
+  <meta data-translate="keywords" name="keywords" content="fire-damaged, house, fundraiser, rebuild, after fire, commuity, support, needed, viral, charity, fundraiser"/>
+  <meta data-translate="ogTitle" property="og:title" content="Help Rebuild the work of Life">
+  <meta data-translate="ogDesc" property="og:description" content="A home was lost in a fire. Help rebuild it.">
+  <meta property="og:image" content="burnt-home.jpeg">
   <link rel="icon" class="site-favicon" type="image/png" href="./images/icons8-pray-48.png">
 </head>
 <body>
 
 <div class="hero">
   <div class="text top">
-  	<div class="content">
+  	<div class="content" data-translate="heroTopText">
   	Everything changed in one day...
   </div>
   <div class="top-media">
@@ -32,21 +32,27 @@
 </div>
 </div>
 	</div>
-
+  <div class="language-switching-wrap" id="langSwitch">
+    <div class="inner-lang-switch">
+    <a href="#" class="lang-link"><img src="./images/flags/ro.svg" class="lang-flag" alt="Ro" title="Română"/></a>
+    <a href="#" class="lang-link"><img src="./images/flags/hu.svg" class="lang-flag" alt="Hu" title="Magyar"/></a>
+    <a href="#" class="lang-link selected"><img src="./images/flags/en.svg" class="lang-flag" alt="En" title="Engligh"/></a>
+    </div>
+  </div>
   <div class="tear-container" id="tear">
     <div class="tear-content">
       <img src="images/burnt-home.jpeg" alt="Burnt house"/>
     </div>
   </div>
 
-  <div class="bottom-prayer"><a href="https://revolut.me/istvangodt?amount=5"><image src="./images/icons8-pray-48.png" alt="donate-and-pray" title="Donate"/></a>
-  <div class="text bottom">... but you can help rebuild what was lost.</div>
+  <div class="bottom-prayer"><a href="https://revolut.me/istvangodt?amount=5" target="_blank" class="donate-btn"><image src="./images/icons8-pray-48.png"  alt="donate-and-pray" tooltip="Donations are welcome here" title="Donate" id="donateBtn"/></a>
+  <div class="text bottom" data-translate="heroBottomText">... but you can help rebuild what was lost.</div>
 </div>
   <!-- Story card -->
   <div class="story-card" id="story">
   	<div><button aria-label="close">×</button></div>
-    <h2>Help Székely István</h2>
-    <p>
+    <h2 data-translate="donationCardTitle">Help Székely István</h2>
+    <p data-translate="donationCardText">
       A sudden fire destroyed their home. Everything was lost overnight.
       With your help, rebuilding can begin.
     </p>
@@ -54,7 +60,7 @@
     <a class="donate donate_btn" href="https://revolut.me/istvangodt" target="_blank">Donate</a>
 
     <div class="share">
-      <a href="https://wa.me/?text=Help%20rebuild%20this%20home%20https%3A%2F%2Fmistily.github.io%2Frebuildhope%2F" id="share-wa" tooltip="Share via Whatsapp">
+      <a href="https://wa.me/?text=Help%20rebuild%20this%20home%20https%3A%2F%2Fmistily.github.io%2Frebuildhope%2F" id="share-wa" tooltip="Share via Whatsapp" title="Share via Whatsapp">
       	<img src="./images/whatsapp_icon.png" title="Share hope via Whatsapp" alt="Share on Whatsapp"/></a>
       </a>
       <a href="https://twitter.com/intent/tweet?text=Help%20rebuild%20this%20home&url=https%3A%2F%2Fmistily.github.io%2Frebuildhope&hashtags=hope,healing,rebuildhome,rebuildhope,donate" id="share-tw" tooltip="Share on X" target="_blank" rel="noopener noreferrer">
@@ -71,8 +77,8 @@
     <div class="slide active">
     	<div class="card">
     		<div class="card-inner">
-    			<div class="card-media"><video src="videos/618fd52d-7354-4256-9568-1a46ff43df8a.mp4" alt="Burnt house" loop="true" mute autoplay="true" controls="true"></video></div>
-    			<div class="card-content">
+    			<div class="card-media"><video src="videos/618fd52d-7354-4256-9568-1a46ff43df8a.mp4" alt="Burning house" loop="true" mute autoplay="true" controls="true" title="Burning family house"></video></div>
+    			<div class="card-content" data-translate="detailCards1Text">
     				Just this year February, our home, that the Székely family have had built together was burnt to ashes just within a couple of hours with all its interior values. It still is a shock for the family to process, that the effort has had gone to waste in that record of a time, with only leaving some reminescent ruins after.
     				The family house was located in Kisögény. Everything, that the house has had contained has had perished and all their previous life and works effort remained only a memory.
     			</div>
@@ -85,8 +91,8 @@
     			<div class="card-media">
     				<img src="./images/disaster-home.jpeg" alt="open the disaster gallery" id="" class="card-media-image">
     			</div>
-    			<div class="card-content">
-    				The most important thing is, that nobody has had gotten any injuries during the disaster, so they are medically safe, though, there is still a life to rebuild for them. <br\>
+    			<div class="card-content" data-translate="detailCards2Text">
+    				The most important thing is, that nobody has had gotten any injuries during the disaster, so they are medically safe, though, there is still a life to live and rebuild for them. <br\>
     				As a whole families everyday goods vanished within just that small amount of time,
     				we ask you to take a moment and consider donating, even with the amount of a coffees price, for them, in order to be able to assure the most important things for survival, like clothing, food, temporary shelter.
     			</div>
@@ -95,8 +101,8 @@
     	</div></div>
     <div class="slide"><div class="card">
     		<div class="card-inner">
-    			<div class="card-media"><img src="./images/burnt-home.jpeg" alt="open the disaster gallery" id="" class="card-media-image"></div>
-    			<div class="card-content">
+    			<div class="card-media"><img src="./images/burnt-home.jpeg" alt="Burnt home" title="Burnt home" id="" class="card-media-image"></div>
+    			<div class="card-content" data-translate="detailCards3Text">
     				We ask you to take a moment and consider donating, even with the amount of a coffees price, for them, in order to be able to assure the most important for survival, like clothing, food, temporary shelter.
     				Could you donate today?
     				If you do, please, consider transfering money to BT.: RO90BTRLRONCRT0409416801 or REVOLUT: RO80REVO0000156042557385 or @istvangodt

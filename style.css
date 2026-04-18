@@ -420,11 +420,47 @@ video {
 .card-inner {
   position: relative;
 }
+.donate-btn.pulse {
+  animation: pulse 0.3 ease;
+}
+@keyframes pulse {
+  0% { transform: scale(1);  }
+  50% { transform: scale(1.12);  }
+  100% { transform: scale(1);  }
+}
+.smoke-layer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0));
+    filter: blur(6px);
+}
 button.prev, button.next {
       border: none;
     background-color: transparent;
     font-size: 43px;
     cursor: pointer;
+}
+.language-switching-wrap {
+  float: right;
+    right: 25px;
+    margin-right: 25px;
+    margin-top: 25px; 
+}
+.inner-lang-switch {
+  display: flex;
+  flex-direction: column;
+}
+.inner-lang-switch a {
+  display: none;
+}
+.inner-lang-switch a.selected {
+  display: flex;
+}
+.lang-flag {
+  height: 36px;
+  width: 36px;
 }
 .card-media { z-index: 1; }
 .card-media-image {object-fit: cover; width: 100%;}
