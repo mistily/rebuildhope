@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", async () =>{
 function setLangFlag(lang) {
   document.querySelector(".lang-link.selected").classList.remove("selected");
   let altLang = String(lang).charAt(0).toUpperCase() + String(lang).slice(1);
-  document.querySelector(".lang-link img[alt='"+altLang"']").parentElement.classList.add("selected");
+  document.querySelector(".lang-link img[alt='"+altLang+"']").parentElement.classList.add("selected");
 }
 donateBtn.addEventListener("click",()=>{
   donateBtn.classList.add("pulse");
