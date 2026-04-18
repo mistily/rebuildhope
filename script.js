@@ -41,6 +41,7 @@ async function changeLanguage(lang){
 }
 function changeBtnsLang(lang) {
   changeMoreInfoBtnLang(lang);
+  donateBtnLang(lang);
   changeXShareBtnLang(lang);
   changeWhatsAppShareBtnLang(lang);
   changeFbShareBtnLang(lang);
@@ -88,6 +89,7 @@ function donateBtnLang(lang) {
   donateBtn.textContent = translations[lang]["donationCardBtn"];
   donateBtn.setAttribute("tooltip", translations[lang]["donationTooltip"]);
   donateBtn.setAttribute("title", translations[lang]["donationTooltip"]);
+  donateBtn.innerText = translations[lang]["donationCardBtn"];
 }
 document.addEventListener("DOMContentLoaded", async () =>{
   translations = await getTranslations();
