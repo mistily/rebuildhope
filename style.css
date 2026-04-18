@@ -33,6 +33,8 @@ body {
 }
 .top .content {
   margin-left: 40px;
+  text-wrap: wrap;
+    max-width: 70vw;  
 }
 #story>div:first-child{
       position: fixed;
