@@ -52,7 +52,7 @@ function changeMoreInfoBtnLang(lang) {
 function changeXShareBtnLang(lang) {
   const text = encodeURIComponent(translations[lang]["xShareTextLine"]);
   const url = encodeURIComponent("https://mistily.github.io/rebuildhope?lang="+lang);
-  const hashTags encodeURIComponent(translations[lang]["xShareTextHashes"]);
+  const hashTags = encodeURIComponent(translations[lang]["xShareTextHashes"]);
   const shareLink = `https://x.com/intent/tweet?text=${text}&url=${url}&hashtags=${hashTags}`;
   const xShareBtn = document.getElementById("share-tw");
   xShareBtn.setAttribute("href", shareLink);
