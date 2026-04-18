@@ -9,7 +9,7 @@ const donateBtn = document.getElementById('donateBtn');
 const langSwitch = document.getElementById("langSwitch");
 let langs = document.getElementsByClassName("lang-link");
 const supported = ["en", "hu", "ro"];
-const translations = null;
+let translations = null;
 
 function getLangFromURL() {
   const params = new URLSearchParams(window.location.search);
