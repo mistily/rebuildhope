@@ -55,7 +55,7 @@ function changeXShareBtnLang(lang) {
   const text = encodeURIComponent(translations[lang]["xShareTextLine"]);
   const url = encodeURIComponent("https://mistily.github.io/rebuildhope?lang="+lang);
   const hashTags = encodeURIComponent(translations[lang]["xShareTextHashes"]);
-  const shareLink = `https://x.com/intent/tweet?text=${text}&url=${url}&hashtags=${hashTags}`;
+  const shareLink = 'https://x.com/intent/tweet?text=${text}&url=${url}&hashtags=${hashTags}';
   const xShareBtn = document.getElementById("share-tw");
   xShareBtn.setAttribute("href", shareLink);
   xShareBtn.setAttribute("title", translations[lang]["xBtnTitle"]);
@@ -65,7 +65,7 @@ function changeXShareBtnLang(lang) {
 }
 function changeWhatsAppShareBtnLang(lang) {
   const text =  encodeURIComponent(translations[lang]["whatsAppShareTextLine"]);
-  const shareLink = encodeURIComponent("https://wa.me/?text="+text);
+  const shareLink = "https://wa.me/?text="+text;
   const shareWhatsAppBtn = document.getElementById("share-wa");
   shareWhatsAppBtn.setAttribute("title", translations[lang]["whatsappBtnTitle"]);
   shareWhatsAppBtn.setAttribute("tooltip", translations[lang]["whatsappBtnTitle"]);
@@ -75,7 +75,7 @@ function changeWhatsAppShareBtnLang(lang) {
 }
 function changeFbShareBtnLang(lang) {
   const url = encodeURIComponent("https://mistily.github.io/rebuildhope?lang="+lang);
-  const shareLink = encodeURIComponent("https://www.facebook.com/sharer/sharer.php?u="+url);
+  const shareLink = "https://www.facebook.com/sharer/sharer.php?u="+url;
   const shareFbAppBtn = document.getElementById("share-fb");
   shareFbAppBtn.setAttribute("title", translations[lang]["facebookBtnTitle"]);
   shareFbAppBtn.setAttribute("tooltip", translations[lang]["facebookBtnTitle"]);
