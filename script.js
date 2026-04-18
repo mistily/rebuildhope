@@ -96,9 +96,14 @@ document.addEventListener("DOMContentLoaded", async () =>{
   const urlLang = getLangFromURL();
   const savedLang = localStorage.getItem("lang");
   const lang = supported.includes(urlLang)? urlLang || savedLang || "en": "en";
+  setLangFlag(lang);
   changeLanguage(lang);
 });
-
+function setLangFlag(lang) {
+  document.querySelector(".lang-link.selected").classList.remove("selected");
+  let altLang = String(lang).charAt(0).toUpperCase() + String(lang).slice(1);
+  document.querySelector(".lang-link img[alt='"+altLang"']").parentElement.classList.add("selected");
+}
 donateBtn.addEventListener("click",()=>{
   donateBtn.classList.add("pulse");
   setTimeoute(() => {
