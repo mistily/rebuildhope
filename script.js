@@ -9,7 +9,7 @@ const donateBtn = document.getElementById('donateBtn');
 const langSwitch = document.getElementById("langSwitch");
 let langs = document.getElementsByClassName("lang-link");
 const supported = ["en", "hu", "ro"];
-const translations;
+const translations = null;
 
 function getLangFromURL() {
   const params = new URLSearchParams(window.location.search);
@@ -20,22 +20,24 @@ async function getTranslations(){
   return await response.json();
 }
 async function changeLanguage(lang){
-  localStorage.setItem("lang",lang);
-  const url = new URL(window.location);
-  url.searchParams.set("lang", lang);
-  window.history.replaceState({},"",url);
-  document.querySelector('html').setAttribute('lang',lang);
-  document.documentElement.lang = lang;
-  document.querySelectorAll("[data-translate]").forEach(el => {
-    const key = el.dataset.translate;
+  if(translations != null) {
+    localStorage.setItem("lang",lang);
+    const url = new URL(window.location);
+    url.searchParams.set("lang", lang);
+    window.history.replaceState({},"",url);
+    document.querySelector('html').setAttribute('lang',lang);
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-translate]").forEach(el => {
+      const key = el.dataset.translate;
 
-    if(el.tagName === "META") {
-      el.setAttribute("content", translations[lang][key]);
-    } else {
-      el.textContent = translations[lang][key];
-    }
-  });
-  changeBtnsLang(lang);
+      if(el.tagName === "META") {
+        el.setAttribute("content", translations[lang][key]);
+      } else {
+        el.textContent = translations[lang][key];
+      }
+    });
+    changeBtnsLang(lang);
+  }
 }
 function changeBtnsLang(lang) {
   changeMoreInfoBtnLang(lang);
