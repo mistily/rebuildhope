@@ -9,7 +9,7 @@ const donateBtn = document.getElementById('donateBtn');
 const langSwitch = document.getElementById("langSwitch");
 let langs = document.getElementsByClassName("lang-link");
 const supported = ["en", "hu", "ro"];
-
+const translations;
 
 function getLangFromURL() {
   const params = new URLSearchParams(window.location.search);
@@ -88,7 +88,7 @@ function donateBtnLang(lang) {
   donateBtn.setAttribute("title", translations[lang]["donationTooltip"]);
 }
 document.addEventListener("DOMContentLoaded", async () =>{
-  const translations = await getTranslations();
+  translations = await getTranslations();
   const urlLang = getLangFromURL();
   const savedLang = localStorage.getItem("lang");
   const lang = supported.includes(urlLang)? urlLang || savedLang || "en": "en";
