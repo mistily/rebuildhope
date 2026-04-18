@@ -71,7 +71,7 @@ function changeWhatsAppShareBtnLang(lang) {
   shareWhatsAppBtn.setAttribute("tooltip", translations[lang]["whatsappBtnTitle"]);
   shareWhatsAppBtn.querySelector("img").setAttribute("title", translations[lang]["whatsappBtnTitle"]);
   shareWhatsAppBtn.querySelector("img").setAttribute("alt", translations[lang]["whatsappBtnTitle"]);
-  shareWhatsAppBtn.setAttribute("a", shareLink);
+  shareWhatsAppBtn.setAttribute("href", shareLink);
 }
 function changeFbShareBtnLang(lang) {
   const url = encodeURIComponent("https://mistily.github.io/rebuildhope?lang="+lang);
@@ -81,7 +81,7 @@ function changeFbShareBtnLang(lang) {
   shareFbAppBtn.setAttribute("tooltip", translations[lang]["facebookBtnTitle"]);
   shareFbAppBtn.querySelector("img").setAttribute("title", translations[lang]["facebookBtnTitle"]);
   shareFbAppBtn.querySelector("img").setAttribute("alt", translations[lang]["facebookBtnTitle"]);
-  shareFbAppBtn.setAttribute("a", shareLink);
+  shareFbAppBtn.setAttribute("href", shareLink);
 }
 function donateBtnLang(lang) {
   let donateBtn = document.getElementById("donateBtn");
