@@ -63,7 +63,7 @@ body {
     right: 2vw;
     bottom: 2px;
     gap: 15px;
-    width: 70%;
+    width: 55%;
 }
 .blob-container {
   width: 430px;
@@ -272,7 +272,8 @@ video {
     object-fit: cover;
 }
 .card {
-  perspective: 90%;
+  perspective: 50vw;
+  max-width: 100%;
 }
 .card-inner {
   transform-style: preserve-3d;
@@ -542,4 +543,7 @@ button.prev, button.next {
   .carousel-prev {
     left: 0vw;
   }
+  .card-media {
+    .height: 20vh;
+  } 
 }
