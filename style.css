@@ -467,7 +467,7 @@ button.prev, button.next {
 }
 .card-media { z-index: 1; }
 .card-media-image {object-fit: cover; width: 100%;}
-.card-content { z-index: 2; position: relative;padding:30px 20px 20px 20px; max-height: 200px; overflow-y: scroll;scrollbar-color: black transparent;
+.card-content { z-index: 2; position: relative;padding:20px 20px 20px 20px; margin-top: 10px;max-height: 200px; overflow-y: scroll;scrollbar-color: black transparent;
   scrollbar-width: thin;}
 .smoke-layer { z-index: 0; }
 /* STORY CARD */
@@ -531,7 +531,8 @@ button.prev, button.next {
     transition: all 0.4s ease;
   }
   .card-content {
-    padding: 15px 10px 10px 10px;
+    padding: 5px 10px 10px 10px;
+    margin-top: 10px;
   }
 }  
 @media(max-width: 556px) {
